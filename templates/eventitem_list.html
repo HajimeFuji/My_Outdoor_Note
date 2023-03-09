@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="img">
+
+    <div class="title">
+        <h2>2023 活動記録</h2>
+    </div>
+
+    <!-- tableの幅追加 -->
+    <table class="table_list">
+        <thead>
+            <tr>
+                <!-- <th>番号</th> -->
+                <th><p class="title_color">Date</p></th>
+                <th><p class="title_color">Event</p></th>
+                <th><p class="title_color">Photo</p></th>
+                <th><p class="title_color">Memo</p></th>
+                <th></th>
+            </tr>
+        </thead>
+            {% for item in eventitem_list %}  
+        <tbody>
+            <tr>
+                <!-- <td>{{item["id"]}}</td> -->
+                <th label="Date"><p class="center">{{item["date"]}}</p></th>
+                <td label="Event"><p class="left">{{item["event"]}}</p></td>
+                <td label="Photo"><p class="center"><a href="{{item['photo']}}" class="btn4">リンク</a></p></td>
+                <td label="Memo"><p class="left">{{item["memo"]}}</p></td>
+                <td>
+                    <div class="btn_top">
+                        <a href="/edit/event/{{item['event_id']}}" class="btn4">編集</a>
+                        <a href="/del/event/{{item['event_id']}}" onclick="return confirm('削除しますか？')" class="btn4">削除</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+            <h3>アイテム追加</h3> 
+
+    <form action="/add/event" method="POST">
+        <!-- 上のaction, method は送り先 -->
+
+        <!-- ----------6/27追加フォーム -->
+        <div class="Form">
+            <p><input type="hidden" size="10" maxlength="10" name="event_id"></p>
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Date</span>
+                <input type="date" name="date" class="Form-Item-Input" placeholder="例）2021-1-23">
+            </div>
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Event</span>
+                <input type="text" name="event" class="Form-Item-Input">
+            </div>
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Photo</span>
+                <input name="photo" type="url" class="Form-Item-Input" placeholder="https.//">
+            </div>
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Memo</span>
+                <input type="text" name="memo" class="Form-Item-Input">
+            </div>
+        </div>
+
+        <div class="btn1">  
+            <button type="submit">新規追加</button>
+        </div> 
+    </form>
+
+    <div class="btn_top1">
+        <a href="/index" type="button" class="btn5">トップに戻る</a>
+    </div>  
+
+</div>  
+
+{% endblock %}

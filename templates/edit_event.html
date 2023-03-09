@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>アイテム編集</h3> 
+
+<form action="/edit/event" method="post">
+    <!-- <div class="form_edit"> -->
+        <div class="Form">
+            <input name = "event_id" type="hidden" value="{{event_id}}" >
+            <!-- <div class="Form-Item">
+                <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>Event_ID</p>
+                <input type="text" name="event_id" value="{{event_id}}" class="Form-Item-Input">
+            </div> -->
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Date</span>
+                <input type="date" name="date" value="{{item['date']}}" class="Form-Item-Input" placeholder="例）2021-1-23">
+            </div>
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Event</span>
+                <input type="text" name="event" value="{{item['event']}}" class="Form-Item-Input">
+            </div>
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Photo</span>
+                <input name="photo" type="url" value="{{item['photo']}}" class="Form-Item-Input" placeholder="https.//">
+            </div>
+            <div class="Form-Item">
+                <span class="Form-Item-Label-Required">Memo</span>
+                <input type="text" name="memo" value="{{item['memo']}}" class="Form-Item-Input">
+            </div>
+            <div>
+                <input type="submit" value="送信" class="btn1">
+            </div>
+        </div>    
+    <!-- </div> -->
+</form>
+
+<div class="btn_top1">
+    <a href="/index" type="button" class="btn5">トップに戻る</a>
+</div> 
+    
+{% endblock %}

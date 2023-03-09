@@ -1,0 +1,315 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", "Meiryo", "HGPｺﾞｼｯｸM", "Osaka", "ＭＳ Ｐゴシック", sans-serif, Century Gothic, Arial;
+    height: 800px;
+}
+
+.img {
+    position: relative;
+    z-index: 0;
+}
+
+.img::before {
+    content: '';
+    background-image: url("/static/img/snowmountain_1280.JPG");
+    background-repeat: repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    filter: opacity(70%);
+    /* filter: blur(18px); */
+    z-index: -1;
+}
+
+
+.img_base {
+    width: 100vw;    
+	border: 0px;
+}
+
+.top {
+    width: 100%;    
+    background-color: rgb(235, 231, 222);
+    font-size: 24px;
+    padding: 15px 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.title {
+    padding-top: 80px;
+}
+
+p  {
+    text-align: center;
+    font-size: 18px;
+} 
+
+a {
+    color:black;
+    display: inline-block;
+    font-size: 24px;
+} 
+
+h1 {
+    font-size: 24px;
+    margin: 30px; 
+    text-align:center;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 30px; 
+    text-align:center;
+    border-bottom: solid 4px rgb(105, 96, 96);    
+}
+
+h3 {
+    font-size: 18px;
+    text-align:center;
+    margin-top: 80px; 
+}
+
+.title_color {
+    font-size: 20px;
+    color: purple;
+}
+
+.left {
+    text-align: left;
+}
+@media screen and (max-width: 768px) {
+    .left {
+        text-align: center;
+    }
+}
+
+td {
+    font-size: 20px;
+}
+
+.table_list{
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table_list thead th {
+    background: #d8ca0c;
+    padding: 10px 15px;
+    border-bottom:#FFF solid 1px;
+    color:#FFF;
+}
+
+.table_list tbody th {
+	background:#e3dd88;
+	color: #3EB1C6;
+	padding: 10px 15px;
+	border-bottom:#FFF solid 1px;
+	vertical-align:middle;
+}
+
+.table_list tbody tr:last-child th {
+	border-bottom:#FFF solid 1px;
+}
+
+.table_list tbody td {
+	background:#FFF;
+	padding:5px 15px;
+	/* border-left:#3EB1C6 solid 1px; */
+	border-bottom:#3EB1C6 solid 1px;
+	vertical-align:middle;
+}
+
+@media screen and (max-width: 768px) {
+    .table_list {
+        width: 90%;
+    }
+    .table_list thead {
+        display:none;
+    }
+    .table_list tbody th {
+        display:block;
+    }
+    .table_list tbody td {
+        display:block;
+    }
+    .table_list tbody td::before {
+        content: attr(label);
+        float: left;
+        clear:both;
+        font-weight:bold;
+    }
+    table.table01 tbody td p {
+        padding-left:6em;
+    }
+}
+
+.form_edit {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto; 
+    max-width: 720px;
+    /* height: 490px; */
+}
+
+/* --------------------------フォームコピペ */
+.Form {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+}
+
+.Form-Item {
+    border-top: 1px solid #ddd;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+.Form-Item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+    flex-wrap: wrap;
+    }
+}
+.Form-Item:nth-child(5) {
+    border-bottom: 1px solid #ddd;
+}
+
+.Form-Item-Label-Required {
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    background:#e3dd88;
+    color: purple;
+    font-weight: bold;
+    font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+.Form-Item-Label-Required {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+    }
+}
+.Form-Item-Input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 40px;
+    flex: 1;
+    width: 100%;
+    /* max-width: 410px; */
+    background: #eaedf2;
+    font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+.Form-Item-Input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+    width: 100%;
+    }
+}
+
+input[type=checkbox] {
+    -ms-transform: scale(1.5, 1.5);
+    -webkit-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5);
+}
+
+/* ---------------- ボタンhover コピペ*/
+.btn1 {
+    background-color: white;
+    color: purple;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans;
+    height: 40px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+    width: 200px;
+    margin: 12px auto 0;
+}
+.btn1:hover {
+    background-color: rgb(112, 106, 105);
+    opacity: 1.0;
+    color: white;
+}
+/* ---------------- */
+.btn_top  {
+    text-align: center;
+}
+
+.btn_top1  {
+    text-align: right;
+}
+
+.btn4:hover {
+    opacity: 1.0;
+    color: rgb(194, 233, 248);
+}
+
+.btn4 {
+    /* width: 200px; */
+    height: 20px;
+    font-size: 20px; 
+    border-radius: 8px;
+    color: rgb(68, 147, 238);
+    text-align: center;
+    text-decoration: underline;
+    padding: 2px 10px;  
+}
+
+.btn5 {
+    width: 70px;
+    height: 36px;
+    font-size: 20px; 
+    border-radius: 8px;
+    color: rgb(5, 5, 5);
+    text-align: center;
+    padding: 0;
+}
+    
+.btn5:hover {
+    opacity: 1.0;
+    color: rgb(193, 200, 202);
+}
+
+.footer {
+    bottom: 0; /*下に固定*/
+    font-size: 16px;
+    color: black;
+    padding: 16px;
+    text-align: center;
+    background-color: rgb(235, 231, 222);
+    opacity: 0.5;
+}
+
+
