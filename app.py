@@ -73,7 +73,7 @@ def item_list():
     )
     c = conn.cursor()
 
-    c.execute('select * from 2023_winter order by date')
+    c.execute('select * from 2023_winter order by date DESC')
     # リスト型にする
     item_list=[]
     # print(c.fetchall())
