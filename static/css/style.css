@@ -89,12 +89,12 @@ h3 {
 }
 
 .link {
-    width: 120px;
+    /* width: 120px; */
     text-align: center;
 }
 @media screen and (max-width: 768px) {
     .link {
-        width: inherit;
+        /* width: inherit; */
         text-align: left;
         padding-left: 80px;
     }
@@ -279,7 +279,10 @@ input[type=checkbox] {
 /* ---------------- */
 .btn_top  {
     text-align: center;
-    width: 80px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 @media screen and (max-width: 768px) {
     .btn_top {
