@@ -3,7 +3,7 @@ import os
 import sqlite3, datetime as dt
 from flask import Flask, render_template, request, redirect, session
 import mysql.connector 
-from mysql.connector import errorcode
+# from mysql.connector import errorcode
 
 # appの名前でFlaskアプリを作っていく
 app = Flask(__name__)
