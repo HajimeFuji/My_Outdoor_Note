@@ -213,5 +213,5 @@ def not_found(error):
 #おまじない
 if __name__ == "__main__":
     # Flaskが持っている開発用サーバーを実行します。
-    app.run()
+    app.run(debug=False,host='0.0.0.0',port=5000)
     # app.run(debug=True)
